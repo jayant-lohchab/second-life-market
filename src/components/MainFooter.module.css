@@ -1,0 +1,45 @@
+/* MainFooter.module.css */
+
+/* Footer Styles */
+.mainFooter {
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    color: white;
+    padding: 2rem 0;
+  }
+  
+  .footerContent {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  /* Footer Links */
+  .footerLinks {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+  
+  .footerLinks li {
+    margin: 0 1rem;
+  }
+  
+  .footerLinks a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  .footerLinks a:hover {
+    color: #f8b400; /* Yellow color on hover */
+  }
+  
+  /* Copyright Section */
+  .copyrightSection {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+  }
+  

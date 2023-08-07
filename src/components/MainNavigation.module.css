@@ -1,0 +1,35 @@
+/* MainNavigation.module.css */
+
+/* Header Styles */
+.header {
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+  }
+  
+  /* Navigation Styles */
+  .navList {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start; /* Align links to the left */
+    font-size: larger;
+  }
+  
+  .navList li {
+    margin: 0 1rem;
+  }
+  
+  /* NavLink Styles */
+  .navList a{
+    color: #f8b400; /* Yellow color for links */
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .navList a:hover,
+  .navList a:active {
+    color: #3498db; /* Blue color on hover */
+    transform: translateY(-2px);
+  }
+  

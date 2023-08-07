@@ -1,0 +1,23 @@
+Home Page ("/"): The main landing page of your website, featuring featured listings, categories, and a search bar.
+
+Listings Page ("/listings"): A page that displays all available listings for second-hand items. Users can filter, sort, and search for items based on various criteria.
+
+Listing Detail Page ("/listings/:id"): This route displays the detailed information about a specific listing. Users can view the item's description, images, price, and contact the seller.
+
+Sell Item Page ("/sell"): A page where users can post their own listings. They can provide item details, upload images, set a price, and add contact information.
+
+User Profile Page ("/profile/:username"): User-specific page displaying information about the user, their listings, and any reviews they've received.
+
+Favorites/Watchlist Page ("/favorites" or "/watchlist"): Users can save their favorite listings to revisit later.
+
+Search Results Page ("/search"): Displays search results based on user queries and filters.
+
+Categories Page ("/categories"): A page that lists various item categories, allowing users to explore items by category.
+
+Login/Register Page ("/login" and "/register"): User authentication and registration forms.
+
+Settings Page ("/settings"): User-specific settings, such as account information, privacy preferences, and notification settings.
+
+About Us Page ("/about"): Information about the website, its purpose, and the team behind it.
+
+Contact Page ("/contact"): A way for users to get in touch with site administrators or support.
