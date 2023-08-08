@@ -17,7 +17,7 @@ const MainNavigation = () => {
               Home
             </NavLink>
           </li>
-          <li>
+          {/* <li>
             <NavLink
               to="listings"
               className={({ isActive }) =>
@@ -27,8 +27,8 @@ const MainNavigation = () => {
             >
               Listings
             </NavLink>
-          </li>
-          <li>
+          </li> */}
+          {/* <li>
             <NavLink
               to="sell"
               className={({ isActive }) =>
@@ -38,8 +38,8 @@ const MainNavigation = () => {
             >
               Sell Item
             </NavLink>
-          </li>
-          <li>
+          </li> */}
+          {/* <li>
             <NavLink
               to="watchList"
               className={({ isActive }) =>
@@ -49,7 +49,7 @@ const MainNavigation = () => {
             >
               WatchList
             </NavLink>
-          </li>
+          </li> */}
           <li>
             <NavLink
               to=":userId"
@@ -59,6 +59,17 @@ const MainNavigation = () => {
               end
             >
               User Profile
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="login"
+              className={({ isActive }) =>
+                isActive ? classes.active : undefined
+              }
+              end
+            >
+              Login
             </NavLink>
           </li>
         </ul>

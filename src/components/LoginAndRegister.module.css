@@ -1,0 +1,11 @@
+main{
+    background-color: rgb(17, 16, 22);
+}
+
+.username{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    width: 50vw;
+    margin: 4vh;
+}
