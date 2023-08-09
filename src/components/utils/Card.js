@@ -5,7 +5,7 @@ const Card = (props) => {
   return (
     <div className={classes.background}>
       <div className={classes.card}>
-        <form>{props.children}</form>
+        {props.children}
       </div>
     </div>
   );
