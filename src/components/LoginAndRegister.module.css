@@ -1,5 +1,7 @@
 main{
     background-color: rgb(17, 16, 22);
+    padding: 0;
+    margin: 0;
 }
 
 .username{

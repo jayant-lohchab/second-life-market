@@ -17,7 +17,7 @@ const MainNavigation = () => {
               Home
             </NavLink>
           </li>
-          {/* <li>
+          <li>
             <NavLink
               to="listings"
               className={({ isActive }) =>
@@ -25,9 +25,9 @@ const MainNavigation = () => {
               }
               end
             >
-              Listings
+              Temp users list
             </NavLink>
-          </li> */}
+          </li>
           {/* <li>
             <NavLink
               to="sell"
