@@ -12,7 +12,8 @@ const MainNavigation = () => {
     <header className={classes.header}>
 
       {sidebar && 
-      
+      <>
+      <div className={classes.sidebarWrapper}>
       <div className={classes.sidebar}>
         <ul>
 
@@ -28,7 +29,9 @@ const MainNavigation = () => {
           <li>Nine</li>
           <li>Ten</li>
         </ul>
-      </div>}
+      </div>
+      </div>
+      </>}
       <nav>
         
         <ul className={classes.navList}>
