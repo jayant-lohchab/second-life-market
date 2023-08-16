@@ -1,11 +1,41 @@
 import { NavLink } from "react-router-dom";
 import classes from "./MainNavigation.module.css"; // Import the module stylesheet using 'classes'
+import { useState } from "react";
 
 const MainNavigation = () => {
+
+  const [sidebar , setSidebar] = useState(false)
+  const sidebarToggle =() =>{
+       setSidebar(!sidebar)
+  }
   return (
     <header className={classes.header}>
+
+      {sidebar && 
+      
+      <div className={classes.sidebar}>
+        <ul>
+
+          <button onClick={sidebarToggle} className={classes.toggleButton}> <i className="fas fa-times"></i></button>
+          <li>One</li>
+          <li>Two</li>
+          <li>Three</li>
+          <li>Four</li>
+          <li>Five</li>
+          <li>Six</li>
+          <li>Seven</li>
+          <li>Eight</li>
+          <li>Nine</li>
+          <li>Ten</li>
+        </ul>
+      </div>}
       <nav>
+        
         <ul className={classes.navList}>
+
+          <div className={classes.sidebarLogo} onClick={sidebarToggle}><i className="fas fa-bars"></i></div>
+
+
           <li>
             <NavLink
               to="/"
