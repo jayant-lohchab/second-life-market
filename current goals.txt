@@ -1,0 +1,27 @@
+--LOGIN AND REGISTER
+-same page
+-switch in between logic
+-styling
+-store users logic
+
+--STARTER
+-basic layout and colours of website-||-aryan
+-proper working main header and sidebar
+-basic layout without store logic of every page 
+-decide where to get items info to show on buy page -- discuss-fakestoreapi
+
+--CART
+-build cart page 
+-store selected items and their total price 
+-give options to increase,decrease or delete items from cart
+-after ordering give user form to get adress from user with authenticating logic
+-store the ordered items by particular user in a backend and the order history 
+
+--Buy page
+-build buy page layout
+-hardcode dummy items list to fetch
+-proper styling with if possible some animations while surfing the items
+
+-SELL PAGE
+-right now just focus on styling and building the form 
+
