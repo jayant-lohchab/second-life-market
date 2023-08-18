@@ -1,36 +1,103 @@
 /* MainNavigation.module.css */
 
 /* Header Styles */
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .header {
-    background-color: #333;
+    /* background-color: #333; */
     color: white;
-    padding: 1rem;
+    /* padding: 10px; */
+    
+    
   }
   
   /* Navigation Styles */
   .navList {
     list-style-type: none;
-    padding: 0;
+    padding: 10px;
     display: flex;
-    justify-content: flex-start; /* Align links to the left */
-    font-size: larger;
+    justify-content:space-between; /* Align links to the left */
+    position: fixed;
+    background: white;
+    width: 100%;
+    top:0;
   }
-  
+  .navList ul {
+    list-style:none;
+    display:flex;
+    margin-block: 0px;
+
+  }
   .navList li {
-    margin: 0 1rem;
+    margin: auto 1rem;
   }
   
   /* NavLink Styles */
   .navList a{
-    color: #f8b400; /* Yellow color for links */
+    color: #212121; /* Yellow color for links */
     text-decoration: none;
-    font-weight: bold;
+    
   }
   
   .navList a:hover,
   .navList a:active {
-    color: #3498db; /* Blue color on hover */
-    transform: translateY(-2px);
+    color: #989898; /* Blue color on hover */
+    text-decoration: underline;
+  }
+
+  .headerLeft{
+    display:flex;
+  }
+
+
+
+  .searchContainer {
+    display: flex;
+    align-items: center;
+    max-width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  .searchInput {
+    flex: 1;
+    border-top: 1.5px solid rgba(128, 128, 128, 0.388);
+    border-bottom: 1.5px solid rgba(128, 128, 128, 0.388);
+    border-left: 1.5px solid rgba(128, 128, 128, 0.388);
+    border-right:none;
+    padding: 10px;
+    font-size: 16px;
+    outline: none;
+    border-radius: 5px 0 0 5px;
+    margin-top:2px;
+  }
+  
+  .searchButton {
+    background-color: #6396bd;
+    color: white;
+    border: none;
+    padding: 13px 15px 11px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 0 5px 5px 0;
+  }
+  
+  .searchButton:hover {
+    background-color: #45718c;
+  }
+  
+  .sidebarLogo{
+    color:black;
+    margin:auto;
+  }
+
+  .loginSignup span{
+    color:#6396bd;
   }
   .sidebar {
     position: fixed;
@@ -42,19 +109,33 @@
     transition: left 0.3s ease-in-out;
     z-index: 9;
   }
-  
+  .mainLogo{
+    margin: auto 10px;
+    color:black;
+
+  }
  
   
   .toggleButton {
     position: absolute;
-    top: -28px;
-    right: -32px;
+    top: 18px;
+    right: 18px;
     background: none;
     border: none;
     color: black;
     font-size: 29px;
     cursor: pointer;
     z-index: 1;
+    background:transparent;
+    transition: transform 1s; 
+}
+.toggleButton:hover{
+  background:transparent;
+  border:0.5px solid grey;
+  color:rgb(104, 103, 103);
+  transform: rotate(180);
+  background:rgb(37, 36, 36);
+
 }
   
 .sidebar ul {
@@ -82,8 +163,44 @@
   position: absolute;
   background-color: #0000008f;
   
-  margin-top:-12px;
+  margin-top:-16px;
   
  
 }
+
+.search-container {
+  display: flex;
+  align-items: center;
+  max-width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.search-input {
+  flex: 1;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  outline: none;
+}
+
+.search-button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.search-button:hover {
+  background-color: #2980b9;
+}
+
+/* Font Awesome icon style */
+.fa {
+  font-size: 18px;
+}
+
   

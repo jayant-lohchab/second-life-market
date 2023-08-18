@@ -31,7 +31,7 @@ const LoginAndRegister = () => {
 
     }
   const login = (
-    <form>
+    <form className={classes.loginPage}>
       <div className={classes.username}>
         <label>Username</label>
         <input />
@@ -40,12 +40,12 @@ const LoginAndRegister = () => {
         <label>Password</label>
         <input />
       </div>
-      <button onClick={loginhandler}>Login</button>
-      <button onClick={changeToRegisterHandler}>New User?</button>
+      <button className={classes.loginPageBtns} onClick={loginhandler}>Login</button>
+      <button className={classes.loginPageBtns} onClick={changeToRegisterHandler}>New User?</button>
     </form>
   );
   const register = (
-    <form onSubmit={registerHandler}>
+    <form className={classes.registerPage} onSubmit={registerHandler}>
       <div className={classes.username}>
         <label>Enter a Username</label>
         <input name="username" />
@@ -62,18 +62,21 @@ const LoginAndRegister = () => {
         <label>Confirm your password</label>
         <input name="password"/>
       </div>
-      <button type="submit">Register</button>
-      <button onClick={changeToLoginHandler}>Already a user</button>
+      <button className={classes.loginPageBtns} type="submit">Register</button>
+      <button className={classes.loginPageBtns} onClick={changeToLoginHandler}>Already a user</button>
     </form>
   )
   const tempLoggedIn = (<>
   <h1> The user is Logged in </h1>
-  <button onClick={logoutHandler}>LogOut</button>
+  <button className={classes.loginPageBtns} onClick={logoutHandler}>LogOut</button>
   </>)
   return (
-    <main>
-      {isLoggedIn ? tempLoggedIn : <Card>{isUser ? login:register}</Card>}
-    </main>
+    <div className={classes.loginregisterMain}>
+      <div className={classes.loginregisterImage}> 
+      <img src='' />
+      </div>
+      {isLoggedIn ? tempLoggedIn : <Card className={classes.formPage}>{isUser ? login:register}</Card>}
+    </div>
   );
 };
 

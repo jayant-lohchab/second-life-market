@@ -8,7 +8,7 @@ const RootPage = () => {
     <>
       <MainNavigation />
       <main>
-        <Outlet />
+        <Outlet/>
       </main>
 
       <MainFooter />
