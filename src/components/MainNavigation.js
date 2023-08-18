@@ -115,8 +115,7 @@ const MainNavigation = () => {
               Login <span>/ Sign Up </span>
             </NavLink>
           </li>
-          </ul>
-        </div>
+        </ul>
       </nav>
     </header>
   );
