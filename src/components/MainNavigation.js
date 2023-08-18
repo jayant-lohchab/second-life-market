@@ -41,6 +41,7 @@ const MainNavigation = () => {
           <div className={classes.sidebarLogo} onClick={sidebarToggle}><i className="fas fa-bars"></i></div>
           <div className={classes.mainLogo}>Website Logo *</div>
           </div>
+            
            <ul>
           <li>
             <NavLink
@@ -115,8 +116,8 @@ const MainNavigation = () => {
               Login <span>/ Sign Up </span>
             </NavLink>
           </li>
-          </ul>
-        </div>
+        </ul>
+      </div>
       </nav>
     </header>
   );
