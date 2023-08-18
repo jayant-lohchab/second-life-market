@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { register } from "../store/AccountSlice";
+import { isUserChange, register } from "../store/AccountSlice";
 import { useState } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import React from "react";
@@ -16,6 +16,11 @@ const SignupForm = (setIsLoggedIn) => {
     createPassword: "",
     confirmPassword: "",
   });
+
+  const isUserhandler =(event)=>{
+    event.preventDefault();
+    dispatch(isUserChange());
+  }
 
   function changeHandler(event) {
     setFormData((prev) => ({
@@ -55,7 +60,7 @@ const SignupForm = (setIsLoggedIn) => {
   };
 
   return (
-    <div style={{ backgroundColor: "black" }}>
+    <>
       <form onSubmit={submitHandler}>
         <div>
           <label>
@@ -153,8 +158,9 @@ const SignupForm = (setIsLoggedIn) => {
         </div>
 
         <button>Create Account</button>
+        <button onClick={isUserhandler}>Already a User</button>
       </form>
-    </div>
+    </>
   );
 };
 

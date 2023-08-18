@@ -12,7 +12,8 @@ const MainNavigation = () => {
     <header className={classes.header}>
 
       {sidebar && 
-      
+      <>
+      <div className={classes.sidebarWrapper}>
       <div className={classes.sidebar}>
         <ul>
 
@@ -28,14 +29,20 @@ const MainNavigation = () => {
           <li>Nine</li>
           <li>Ten</li>
         </ul>
-      </div>}
+      </div>
+      </div>
+      </>}
       <nav>
         
-        <ul className={classes.navList}>
+        <div className={classes.navList}>
+          <div className={classes.headerLeft}>
+          
 
           <div className={classes.sidebarLogo} onClick={sidebarToggle}><i className="fas fa-bars"></i></div>
-
-
+          <div className={classes.mainLogo}>Website Logo *</div>
+          </div>
+            
+           <ul>
           <li>
             <NavLink
               to="/"
@@ -47,7 +54,14 @@ const MainNavigation = () => {
               Home
             </NavLink>
           </li>
-          <li>
+          <div class={classes.sesarchContainer}>
+               <input type="text" className={classes.searchInput} placeholder="Search..." />
+               
+               <button class={classes.searchButton}>
+                 Search
+               </button>
+             </div>
+          {/* <li>
             <NavLink
               to="listings"
               className={({ isActive }) =>
@@ -57,7 +71,7 @@ const MainNavigation = () => {
             >
               Temp users list
             </NavLink>
-          </li>
+          </li> */}
           {/* <li>
             <NavLink
               to="sell"
@@ -91,7 +105,7 @@ const MainNavigation = () => {
               User Profile
             </NavLink>
           </li>
-          <li>
+          <li className={classes.loginSignup}>
             <NavLink
               to="login"
               className={({ isActive }) =>
@@ -99,21 +113,11 @@ const MainNavigation = () => {
               }
               end
             >
-              Login
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="signup"
-              className={({ isActive }) =>
-                isActive ? classes.active : undefined
-              }
-              end
-            >
-              Sign up
+              Login <span>/ Sign Up </span>
             </NavLink>
           </li>
         </ul>
+      </div>
       </nav>
     </header>
   );

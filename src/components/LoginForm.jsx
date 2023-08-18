@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { login } from "../store/AccountSlice";
+import { isUserChange, login } from "../store/AccountSlice";
 import { Link } from "react-router-dom";
 import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
 
@@ -19,6 +19,11 @@ const LoginForm = () => {
     }));
   }
 
+  const isUserhandler = (event)=>{
+    event.preventDefault();
+    dispatch(isUserChange());
+  }
+
   function submitHandler(event) {
     event.preventDefault();
     dispatch(login());
@@ -26,7 +31,7 @@ const LoginForm = () => {
   }
 
   return (
-    <form onSubmit={submitHandler} style={{ backgroundColor: "black" }}>
+    <form onSubmit={submitHandler} >
       <label className="w-full">
         <p>
           Email Address
@@ -72,6 +77,7 @@ const LoginForm = () => {
       </label>
 
       <button>Sign in</button>
+      <button onClick={isUserhandler}>New User</button>
     </form>
   );
 };

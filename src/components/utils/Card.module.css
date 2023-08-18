@@ -44,8 +44,8 @@ input{
     border-radius: 8px;
     box-shadow: 3px 3px rgb(57, 44, 44);
     height: 4vh;
-}
-button {
+} 
+ button {
     display: inline-block;
     padding: 10px 20px;
     border: 2px solid rgb(64, 49, 49); 
