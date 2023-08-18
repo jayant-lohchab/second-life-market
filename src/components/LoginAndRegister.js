@@ -3,6 +3,7 @@ import Card from "./utils/Card";
 import classes from "./LoginAndRegister.module.css";
 import { useSelector,useDispatch } from "react-redux";
 import { accountActions } from "../store/loginInfo";
+import loginImage from '../assets/loginImage.jpg'
 const LoginAndRegister = () => {
   const dispatch = useDispatch();
   const isUser = useSelector(state=>state.accountReducers.isUser);
@@ -32,11 +33,12 @@ const LoginAndRegister = () => {
     }
   const login = (
     <form className={classes.loginPage}>
-      <div className={classes.username}>
+      <h3 className={classes.loginHeading}>LOGIN</h3>
+      <div className={classes.inputBox}>
         <label>Username</label>
         <input />
       </div>
-      <div className={classes.username}>
+      <div className={classes.inputBox}>
         <label>Password</label>
         <input />
       </div>
@@ -46,19 +48,21 @@ const LoginAndRegister = () => {
   );
   const register = (
     <form className={classes.registerPage} onSubmit={registerHandler}>
-      <div className={classes.username}>
-        <label>Enter a Username</label>
+      <h3 className={classes.loginHeading}>REGISTER</h3>
+
+      <div className={classes.inputBox}>
+        <label>Enter your Name</label>
         <input name="username" />
       </div>
-      <div className={classes.username}>
-        <label>Enter Your email</label>
+      <div className={classes.inputBox}>
+        <label>Enter your email</label>
         <input name="email" />
       </div>
-      <div className={classes.username}>
-        <label>Enter a password</label>
+      <div className={classes.inputBox}>
+        <label>Enter password</label>
         <input name="password" />
       </div>
-      <div className={classes.username}>
+      <div className={classes.inputBox}>
         <label>Confirm your password</label>
         <input name="password"/>
       </div>
@@ -71,11 +75,14 @@ const LoginAndRegister = () => {
   <button className={classes.loginPageBtns} onClick={logoutHandler}>LogOut</button>
   </>)
   return (
+    <div className={classes.loginregisterWrapper}>
+
     <div className={classes.loginregisterMain}>
       <div className={classes.loginregisterImage}> 
-      <img src='' />
+      <img src={loginImage} />
       </div>
       {isLoggedIn ? tempLoggedIn : <Card className={classes.formPage}>{isUser ? login:register}</Card>}
+    </div>
     </div>
   );
 };
