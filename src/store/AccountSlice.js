@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const accountStatus = { isUser: false, isLoggedIn: false, accounts: [] };
+const accountStatus = { isUser: true, isLoggedIn: false, accounts: [] };
 
 const AccountSlice = createSlice({
   name: "accountStatus",
