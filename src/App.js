@@ -12,13 +12,13 @@ import ContactPage from "./Pages/Contact";
 import SellPage from "./Pages/Sell";
 import RootPage from "./Pages/RootPage";
 import LoginAndRegister from "./components/LoginAndRegister";
-import ErrorPage from "./Pages/Error";
+// import ErrorPage from "./Pages/Error";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <RootPage />,
-    errorElement:<ErrorPage/>,
+    // errorElement:<ErrorPage/>,
     children: [
       { index: true, element: <HomePage /> },
       {
