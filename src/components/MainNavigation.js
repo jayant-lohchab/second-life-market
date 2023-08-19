@@ -61,7 +61,7 @@ const MainNavigation = () => {
                  Search
                </button>
              </div>
-          {/* <li>
+          <li>
             <NavLink
               to="listings"
               className={({ isActive }) =>
@@ -69,9 +69,9 @@ const MainNavigation = () => {
               }
               end
             >
-              Temp users list
+              Listings
             </NavLink>
-          </li> */}
+          </li>
           {/* <li>
             <NavLink
               to="sell"
@@ -94,7 +94,7 @@ const MainNavigation = () => {
               WatchList
             </NavLink>
           </li> */}
-          <li>
+          {/* <li>
             <NavLink
               to=":userId"
               className={({ isActive }) =>
@@ -104,7 +104,7 @@ const MainNavigation = () => {
             >
               User Profile
             </NavLink>
-          </li>
+          </li> */}
           <li className={classes.loginSignup}>
             <NavLink
               to="login"

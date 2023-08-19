@@ -1,12 +1,28 @@
-import React from 'react'
-import { useSelector } from 'react-redux';
+import ListingItems from "../components/ListingItems";
+import { useLoaderData } from "react-router-dom";
 
 const ListingsPage = () => {
-  const usersList = useSelector(state=>state.accountReducers.usersList);
-  
+
+  const data = useLoaderData();
+
   return (
-    <div>{usersList}</div>
-  )
-}
+    <main>
+      <ListingItems data={data} />
+    </main>
+  );
+};
 
 export default ListingsPage;
+
+
+export const loader = async ()=>{
+  const response = await fetch(
+    "https://second-market-ae292-default-rtdb.firebaseio.com/public/item_store.json"
+  );
+  if (!response.ok) {
+    throw new Error({message:'Something went wrong in fetching the data'})
+  }
+  else{
+      return response;
+  }
+}
