@@ -13,6 +13,8 @@
     background-color: #ffffff;
     
   }
+
+
   
   .inputBox{
     position: relative;
@@ -161,4 +163,12 @@ height:520px;
   }
   .loginForgotPass:hover{
     text-decoration: underline;
+  }
+
+
+
+
+  @media screen and (min-width:760px) and (max-width:900px) {
+    .registerPage , .loginPage {
+      width: 350px;}
   }
