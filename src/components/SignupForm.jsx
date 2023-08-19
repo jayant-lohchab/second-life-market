@@ -4,6 +4,10 @@ import { useState } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import classes from './LoginAndRegister.module.css'
+import loginImg from '../assets/loginImage.jpg'
+
+
 
 const SignupForm = (setIsLoggedIn) => {
   const navigate = useNavigate();
@@ -61,12 +65,24 @@ const SignupForm = (setIsLoggedIn) => {
 
   return (
     <>
-      <form onSubmit={submitHandler}>
-        <div>
+
+    
+<div className={classes.loginregisterWrapper}>
+    <div className={classes.loginregisterMain}>
+    <div className={classes.loginregisterImage}>
+        <img src={loginImg} alt="" />
+      </div>
+      <form className={classes.registerPage} onSubmit={submitHandler}>
+      <div className={classes.loginToggleBtns}>
+        <button className={classes.signupBtn}>Sign Up</button>
+        <button  onClick={isUserhandler} className={classes.loginBtn}>Login</button>
+      </div>
+        
+          <div className={classes.inputBox}>
           <label>
-            <p>
-              First Name<sup>*</sup>
-            </p>
+              First Name
+          </label>
+
             <input
               required
               type="text"
@@ -74,14 +90,16 @@ const SignupForm = (setIsLoggedIn) => {
               id="firstName"
               onChange={changeHandler}
               value={formData.firstName}
-              placeholder="Enter first name"
+              
             />
-          </label>
+          </div>
+         
+          <div className={classes.inputBox}>
 
           <label>
-            <p>
-              Last Name<sup className="text-pink-200">*</sup>
-            </p>
+            Last Name
+          </label>
+
             <input
               required
               type="text"
@@ -89,31 +107,33 @@ const SignupForm = (setIsLoggedIn) => {
               id="lastName"
               onChange={changeHandler}
               value={formData.lastName}
-              placeholder="Enter last name"
             />
-          </label>
-        </div>
+          </div>
+
+        
+          <div className={classes.inputBox}>
 
         <label>
-          <p>
-            Email Address<sup>*</sup>
-          </p>
+           Email Address
+          </label>
           <input
             required
             type="email"
             name="email"
             id="email"
             value={formData.email}
-            placeholder="Enter email address"
             onChange={changeHandler}
           />
-        </label>
+        
+        </div>
+
 
         <div>
+        <div className={classes.inputBox}>
+
           <label>
-            <p>
-              Create Password<sup>*</sup>
-            </p>
+            Create Password
+            </label>
             <input
               required
               type={showPassword.createPassword ? "text" : "password"}
@@ -121,22 +141,26 @@ const SignupForm = (setIsLoggedIn) => {
               id="createPassword"
               onChange={changeHandler}
               value={formData.createPassword}
-              placeholder="Enter Password"
             />
 
-            <span onClick={() => handleClick("createPassword")}>
+            <span className={classes.eyelogo} style={{display:'none'}} onClick={() => handleClick("createPassword")}>
               {showPassword.createPassword ? (
-                <AiOutlineEyeInvisible />
+                <AiOutlineEyeInvisible fontSize={24} fill="#AFB2BF"/>
               ) : (
-                <AiOutlineEye />
+                <AiOutlineEye fontSize={24} fill="#AFB2BF" />
               )}
             </span>
-          </label>
+          
+          </div>
+
+          </div>
+
+
+          <div className={classes.inputBox}>
 
           <label>
-            <p>
-              Create Password<sup>*</sup>
-            </p>
+           Confirm Password
+            </label>
             <input
               required
               type={showPassword.confirmPassword ? "text" : "password"}
@@ -144,22 +168,25 @@ const SignupForm = (setIsLoggedIn) => {
               id="confirmPassword"
               onChange={changeHandler}
               value={formData.confirmPassword}
-              placeholder="Confirm Password"
             />
 
-            <span onClick={() => handleClick("confirmPassword")}>
+            <span className={classes.eyelogo} style={{display:'none'}} onClick={() => handleClick("confirmPassword")}>
               {showPassword.confirmPassword ? (
-                <AiOutlineEyeInvisible />
+                <AiOutlineEyeInvisible fontSize={24} fill="#AFB2BF" />
               ) : (
-                <AiOutlineEye />
+                <AiOutlineEye fontSize={24} fill="#AFB2BF"/>
               )}
             </span>
-          </label>
+          
         </div>
 
-        <button>Create Account</button>
-        <button onClick={isUserhandler}>Already a User</button>
+        <button  className={classes.loginSinupBtn}>Create Account</button>
+        
       </form>
+      </div>
+
+      </div>
+
     </>
   );
 };

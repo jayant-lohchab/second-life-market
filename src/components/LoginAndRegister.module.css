@@ -1,7 +1,7 @@
 
 /* LoginAndRegister.module.css */
 .inputBox {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     
   }
   
@@ -14,28 +14,68 @@
     
   }
   
-  .registerPage label , .loginPage label{
+  .inputBox{
+    position: relative;
+  }
+  .inputBox label {
     
-    display: block;
-    margin-bottom: 5px;
+    position: absolute;
+    
     color: rgb(0, 0, 0);
     font-weight: 300;
     font-size: 15px;
+    background:white;
+    top:10px;
+    left:1px;
+    transition: top 0.5s ease;
   }
-  .registerPage input , .loginPage input{
+  .inputBox input {
     width: 100%;
     padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    border-bottom: 1px solid #ccc;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+   
+   
     outline: none;
   }
+
+  .inputBox input:focus  {
+    border-bottom:2px solid #6598c0;
+    border-top:none;
+    border-left:none;
+    border-right:none;
+    
+  }
+
+  .inputBox:focus-within label {
+     top:-10px;
+     color:#6598c0;
+     font-size: 12px;
+  }
+
+  .inputBox :nth-child( )
  
+  .eyelogo{
+    position:absolute;
+    top: 5px;
+    right: 5px;
+    
+  }
+
+  .loginToggleBtns{
+    display: flex;
+    gap:10px;
+    margin-bottom: 30px;
+  }
   
-  .loginPageBtns{
-    display: block;
-    width: 100%;
+  .signupBtn , .loginBtn{
+    
+    width: 50%;
+    
     padding: 0.5rem;
-    background-color: #6396bd   ;
+    background-color: #6598c0   ;
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -45,8 +85,14 @@
     margin-block:10px;
     height: 45px;
   }
+
+
   
-  .loginPageBtns:hover {
+  .signupBtn:hover , .loginBtn:hover {
+    background-color: #477aa1;
+  }
+
+  .signupBtn:active .loginBtn:active{
     background-color: #477aa1;
   }
   .loginregisterWrapper{
@@ -67,10 +113,7 @@
   .loginregisterImage img{
 height:520px;
   }
-  .formPage{
-
-
-  }
+  
 
   .loginHeading{
     color: rgb(105, 105, 105);
@@ -83,4 +126,39 @@ height:520px;
   }
   .loginPageBtns :nth-child(1){
     margin-top: 20px;
+  }
+
+  .loginSinupBtn{
+    display: inline-block;
+    padding: 14px 20px;
+    background-image: linear-gradient(to bottom, #6598c0, #355f82);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    width:100%;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+
+  .loginSinupBtn:hover {
+    background-image: linear-gradient(to bottom, #477aa1, #27475b);
+  transform: scale(1.05);
+  }
+  
+  .loginSinupBtn:active {
+    background-image: linear-gradient(to bottom, #355f82, #1e3447);
+  transform: scale(0.95);
+  }
+
+  .loginForgotPass{
+    color:rgb(18, 1, 130);
+    text-decoration:none;
+    font-weight: 300;
+    text-align: right;
+    
+  }
+  .loginForgotPass:hover{
+    text-decoration: underline;
   }

@@ -3,7 +3,8 @@ import { useDispatch } from "react-redux";
 import { isUserChange, login } from "../store/AccountSlice";
 import { Link } from "react-router-dom";
 import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
-
+import classes from './LoginAndRegister.module.css'
+import loginImg from '../assets/loginImage.jpg'
 const LoginForm = () => {
   const dispatch = useDispatch();
   const [showPassword, setShowPassword] = useState(false);
@@ -30,40 +31,53 @@ const LoginForm = () => {
     alert("Login Successful");
   }
 
-  return (
-    <form onSubmit={submitHandler} >
-      <label className="w-full">
-        <p>
-          Email Address
-          <sup className="text-pink-200">*</sup>
-        </p>
+  return (<>
+   
+    <div className={classes.loginregisterWrapper}>
+    <div className={classes.loginregisterMain}>
+      <div className={classes.loginregisterImage}>
+        <img src={loginImg} alt="" />
+      </div>
+    <form  className={classes.loginPage} onSubmit={submitHandler} >
+    <div className={classes.loginToggleBtns}>
+        <button onClick={isUserhandler} className={classes.signupBtn}>Sign Up</button>
+        <button className={classes.loginBtn}>Login</button>
+      </div>
 
-        <input
+      <div className={classes.inputBox}>
+
+      <label className="w-full">
+        
+          Email Address
+      </label>
+      <input
           type="email"
           required
           value={formData.email}
-          placeholder="Enter your email address"
+        
           onChange={changeHandler}
           name="email"
         />
-      </label>
+      </div>
 
+
+
+      <div className={classes.inputBox}>
       <label>
-        <p>
+       
           Password
-          <sup>*</sup>
-        </p>
+      </label>
 
         <input
           type={showPassword ? "text" : "password"}
           required
           value={formData.password}
-          placeholder="Enter Password"
+         
           onChange={changeHandler}
           name="password"
         />
 
-        <span onClick={() => setShowPassword(!showPassword)}>
+        <span className={classes.eyelogo} style={{display:'none'}} onClick={() => setShowPassword(!showPassword)}>
           {showPassword ? (
             <AiOutlineEyeInvisible fontSize={24} fill="#AFB2BF" />
           ) : (
@@ -71,14 +85,17 @@ const LoginForm = () => {
           )}
         </span>
 
-        <Link to="#">
-          <p>Forgot Password</p>
+        <Link className={classes.loginForgotPass} to="#">
+          <p>Forgot Password ?</p>
         </Link>
-      </label>
+      </div>
 
-      <button>Sign in</button>
-      <button onClick={isUserhandler}>New User</button>
+      <button className={classes.loginSinupBtn}>Log In</button>
+      
     </form>
+    </div>
+    </div>
+    </>
   );
 };
 
