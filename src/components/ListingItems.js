@@ -27,4 +27,4 @@ function ListingItems({data}) {
   )
 }
 
-export default ListingItems
+export default ListingItems 
