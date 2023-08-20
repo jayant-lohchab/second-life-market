@@ -109,7 +109,7 @@
     height: 100%;
     background-color: #adadad;
     transition: left 0.3s ease-in-out;
-    z-index: 9;
+    z-index: 11;
   }
   .mainLogo{
     margin: auto 10px;
@@ -166,6 +166,8 @@
   background-color: #0000008f;
   
   margin-top:-16px;
+  top:16px;
+  z-index: 11;
   
  
 }
