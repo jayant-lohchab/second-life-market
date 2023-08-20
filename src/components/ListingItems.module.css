@@ -1,3 +1,79 @@
-.temp{
+.listingPage {
+    max-width: 1400px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 70px;
+    gap: 50px;
+    margin-inline: auto;
+  }
+  
+  .listingCard {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 300px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 4px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .listingCard:hover {
+    transform: translateY(-5px);
+  }
+  
+  .listingImage {
+    width: 100%;
+    height: 0;
+    padding-bottom: 60%; /* Adjust this value based on the desired aspect ratio */
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px 10px 0 0;
+  }
+  
+  .listingImage img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  
+  .listingDescription {
+    padding-inline:10px;
+  }
+  .listingDescription h1 {
     color: black;
-}
+    font-size: 22px;
+    font-weight: 500;
+  }
+  
+  .listingDescription h2 {
+    color: rgb(137, 137, 137);
+    font-weight: 300;
+    font-size: 15px;
+  }
+  
+  .listingCartButton {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: none;
+    background-color: #6598c0;
+    border-radius: 0 0 10px 10px;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .listingCartButton:hover {
+    background-color: #477aa1;
+    
+  }
+  
+  .listingCartButton h3 {
+    font-size: 16px;
+  }
+  
