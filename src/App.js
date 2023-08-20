@@ -1,6 +1,6 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import HomePage from "./Pages/Home";
-import ListingsDetailsPage from "./Pages/ListingsDetails";
+import ListingsDetailsPage,{loader as listingDetailLoader} from "./Pages/ListingsDetails";
 import ListingsPage ,{loader as listingsLoader} from "./Pages/Listings";
 import UserProfilePage from "./Pages/UserProfile";
 import WatchListPage from "./Pages/WatchList";
@@ -12,21 +12,21 @@ import ContactPage from "./Pages/Contact";
 import SellPage from "./Pages/Sell";
 import RootPage from "./Pages/RootPage";
 import LoginAndRegister from "./components/LoginAndRegister";
-// import ErrorPage from "./Pages/Error";
+import ErrorPage from "./Pages/Error";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <RootPage />,
-    // errorElement:<ErrorPage/>,
+    errorElement:<ErrorPage/>,
     children: [
       { index: true, element: <HomePage /> },
       {
         path: "listings",
         element: <ListingsPage />,
-        children: [{ path: ":itemId", element: <ListingsDetailsPage /> }],
         loader:listingsLoader
       },
+      {path:"listings/:id",element:<ListingsDetailsPage/>,loader:listingDetailLoader},
       { path: "sell", element: <SellPage /> },
       { path: ":userId", element: <UserProfilePage /> },
       { path: "watchList", element: <WatchListPage /> },

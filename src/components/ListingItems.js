@@ -1,4 +1,5 @@
 import classes from "./ListingItems.module.css";
+import { Link } from "react-router-dom";
 
 function ListingItems({ data }) {
   const storeItems = [];
@@ -13,10 +14,16 @@ function ListingItems({ data }) {
       });
     }
   }
-  
-  const shownItems = storeItems.map((item) => (
-    <div className={classes.listingCard} key={item.id}>
-      <div className={classes.listingImage}>
+
+
+  return (
+    <div className={classes.fullPage}>
+      <h1>All Items</h1>
+      <ul className={classes.itemsList} >
+        {storeItems.map((item) => (
+          <li key={item.id} className={classes.listingCard}>
+            <Link to={`/listings/${item.id}`}>
+            <div className={classes.listingImage}>
         <img src={item.image} alt="store" />
       </div>
 
@@ -25,14 +32,16 @@ function ListingItems({ data }) {
         <h2>{item.description}</h2>
       </div>
 
+            </Link>
       <button className={classes.listingCartButton}>
         Add to Cart
         <h3>₹ {item.price}</h3>
       </button>
+          </li>
+        ))}
+      </ul>
     </div>
-  ));
-
-  return <div className={classes.listingPage}>{shownItems}</div>;
+  );
 }
 
 export default ListingItems;

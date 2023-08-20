@@ -2,7 +2,7 @@ import React from 'react'
 
 const SellPage = () => {
   return (
-    <div>SellPage</div>
+    <div style={{color:'black'}}>SellPage</div>
   )
 }
 
