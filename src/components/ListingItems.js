@@ -1,7 +1,16 @@
 import classes from "./ListingItems.module.css";
 import { Link } from "react-router-dom";
+import { addingItems } from "../store/CartSlice";
+import { useDispatch } from "react-redux";
 
 function ListingItems({ data }) {
+
+  const dispatch = useDispatch();
+
+  const addingToCartHandler = (item)=>{
+    dispatch(addingItems(item));
+  }
+
   const storeItems = [];
   for (const key in data) {
     if (data[key] != null) {
@@ -11,6 +20,8 @@ function ListingItems({ data }) {
         description: data[key].description,
         price: data[key].price,
         image: data[key].image,
+        location: data[key].location,
+        sellerName: data[key].sellerName,
       });
     }
   }
@@ -33,7 +44,7 @@ function ListingItems({ data }) {
       </div>
 
             </Link>
-      <button className={classes.listingCartButton}>
+      <button onClick={()=>addingToCartHandler(item)} className={classes.listingCartButton}>
         Add to Cart
         <h3>₹ {item.price}</h3>
       </button>

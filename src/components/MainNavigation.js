@@ -54,14 +54,14 @@ const MainNavigation = () => {
               Home
             </NavLink>
           </li>
-          <div class={classes.sesarchContainer}>
+          {/* <div class={classes.sesarchContainer}>
                <input type="text" className={classes.searchInput} placeholder="Search..." />
                
                <button class={classes.searchButton}>
                  Search
                </button>
-             </div>
-          <li>
+            </div> */}
+          <li> 
             <NavLink
               to="listings"
               className={({ isActive }) =>
@@ -70,6 +70,17 @@ const MainNavigation = () => {
               end
             >
               Listings
+            </NavLink>
+          </li>
+          <li> 
+            <NavLink
+              to="cart"
+              className={({ isActive }) =>
+                isActive ? classes.active : undefined
+              }
+              end
+            >
+              Cart
             </NavLink>
           </li>
           {/* <li>
