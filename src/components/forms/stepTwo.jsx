@@ -33,88 +33,110 @@ const StepTwo = ({ prevStep, setFormData, formData, onChange, onSubmit }) => {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <label>Brand</label>
-        <input
-          type="text"
-          required
-          name="brand"
-          value={formData.brand}
-          onChange={handleInputChange}
-          placeholder="Brand"
-        />
-        <label>Ad Title</label>
-        <input
-          type="text"
-          required
-          name="adtitle"
-          value={formData.adtitle}
-          onChange={handleInputChange}
-          placeholder="Ad Title"
-        />
-        <label>Description</label>
-        <textarea
-          name="desc"
-          required
-          value={formData.desc}
-          onChange={handleInputChange}
-          placeholder="Description"
-        />
-        <label>Price(in inr)</label>
-        <input
-          type="text"
-          required
-          name="price"
-          value={formData.price}
-          onChange={handleInputChange}
-          placeholder="Price"
-        />
-        <label>Name</label>
-        <input
-          type="text"
-          required
-          name="name"
-          value={formData.name}
-          onChange={handleInputChange}
-          placeholder="Your Name"
-        />
-        <label>Phone Number</label>
-        <input
-          type="text"
-          required
-          name="mobileno"
-          value={formData.mobileno}
-          onChange={handleInputChange}
-          placeholder="Mobile Number"
-        />
-        <label>Email</label>
-        <input
-          type="email"
-          required
-          name="email"
-          value={formData.email}
-          onChange={handleInputChange}
-          placeholder="Email-Id"
-        />
-        <label>Upload Image</label>
-
-        {/* Image upload */}
-        <input type="file" multiple onChange={handleImageUpload} />
-        {formData.images && formData.images.length > 0 && (
-          <div>
-            <h3>Preview Images:</h3>
+        <label>
+          Brand:
+          <input
+            type="text"
+            required
+            name="brand"
+            value={formData.brand}
+            onChange={handleInputChange}
+            placeholder="Brand"
+          />
+        </label>
+        <br />
+        <label>
+          Ad Title
+          <input
+            type="text"
+            required
+            name="adtitle"
+            value={formData.adtitle}
+            onChange={handleInputChange}
+            placeholder="Ad Title"
+          />
+        </label>
+        <br />
+        <label>
+          Description
+          <textarea
+            name="desc"
+            required
+            value={formData.desc}
+            onChange={handleInputChange}
+            placeholder="Description"
+          />
+        </label>
+        <br />
+        <label>
+          Price(in inr)
+          <input
+            type="text"
+            required
+            name="price"
+            value={formData.price}
+            onChange={handleInputChange}
+            placeholder="Price"
+          />
+        </label>
+        <br />
+        <label>
+          Full Name
+          <input
+            type="text"
+            required
+            name="name"
+            value={formData.name}
+            onChange={handleInputChange}
+            placeholder="Your Name"
+          />
+        </label>
+        <br />
+        <label>
+          Mobile Number
+          <input
+            type="number"
+            required
+            maxLength={10}
+            name="mobileno"
+            value={formData.mobileno}
+            onChange={handleInputChange}
+            placeholder="Mobile Number"
+          />
+        </label>
+        <br />
+        <label>
+          Email Address
+          <input
+            type="email"
+            required
+            name="email"
+            value={formData.email}
+            onChange={handleInputChange}
+            placeholder="Email-Id"
+          />
+        </label>
+        <br />
+        <label>
+          Upload Image
+          <input type="file" multiple onChange={handleImageUpload} />
+          {formData.images && formData.images.length > 0 && (
             <div>
-              {Array.from(formData.images).map((image, index) => (
-                <img
-                  key={index}
-                  src={URL.createObjectURL(image)}
-                  alt={`Preview ${index}`}
-                  style={{ maxWidth: "100px", margin: "5px" }}
-                />
-              ))}
+              <h3>Preview Images:</h3>
+              <div>
+                {Array.from(formData.images).map((image, index) => (
+                  <img
+                    key={index}
+                    src={URL.createObjectURL(image)}
+                    alt={`Preview ${index}`}
+                    style={{ maxWidth: "100px", margin: "5px" }}
+                  />
+                ))}
+              </div>
             </div>
-          </div>
-        )}
-
+          )}
+        </label>
+        <br />
         {/* Submit button */}
         <button>Submit</button>
         <button onClick={backHandler}>Back</button>
