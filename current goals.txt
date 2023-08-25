@@ -1,27 +1,23 @@
---LOGIN AND REGISTER
--same page
--switch in between logic
--styling
--store users logic
+--main
+-private routes(sell,cart,listings when putting items in cart)
+-find a way store photos without giving url on bckend
+-render it on front end 
 
---STARTER
--basic layout and colours of website-||-aryan
--proper working main header and sidebar
--basic layout without store logic of every page 
--decide where to get items info to show on buy page -- discuss-fakestoreapi
+
+--user profile page
+-initiate one
+-selled item status/ordered item status
+-add functionlity for editing user information
+
+--home page
+-make one
 
 --CART
--build cart page 
--store selected items and their total price 
--give options to increase,decrease or delete items from cart
--after ordering give user form to get adress from user with authenticating logic
--store the ordered items by particular user in a backend and the order history 
+-store cart items in temp backend too 
+-show total no of items in cart 
 
---Buy page
--build buy page layout
--hardcode dummy items list to fetch
--proper styling with if possible some animations while surfing the items
 
--SELL PAGE
--right now just focus on styling and building the form 
 
+
+--BUGS
+--placeholder bug 
