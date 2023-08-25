@@ -3,26 +3,22 @@ import { Form } from "react-router-dom";
 const StepTwo = ({ prevStep, setFormData, formData, onChange, onSubmit }) => {
   const handleInputChange = (event) => {
     const { name, value } = event.target;
-    onChange({ [name]: value });
-  };
-
-  const handleImageUpload = (event) => {
-    const { files } = event.target;
-    onChange({ images: files });
+    const newValue = name === "price" ? parseInt(value, 10) : value;
+    onChange({ [name]: newValue });
   };
 
   const handleSubmit = (event) => {
     event.preventDefault(); // Prevent the default form submission behavior
     onSubmit(); // Call the parent component's onSubmit function
     setFormData({
-      category: "",
-      brand: "",
-      adtitle: "",
-      desc: "",
-      price: "",
-      name: "",
-      mobileno: "",
-      images: [],
+      category:"",
+      contactEmail:"",
+      description:"",
+      image:"",
+      location:"",
+      name:"",
+      price:0,
+      sellerName:"",
     });
   };
 
@@ -31,47 +27,73 @@ const StepTwo = ({ prevStep, setFormData, formData, onChange, onSubmit }) => {
   }
 
   return (
-    <div>
+    <div style={{background:'white'}}>
       <Form onSubmit={handleSubmit}>
         <label>
-          Brand:
+          Your Contact Email
           <input
             type="text"
             required
-            name="brand"
-            value={formData.brand}
+            name="contactEmail"
+            value={formData.contactEmail}
             onChange={handleInputChange}
-            placeholder="Brand"
+            placeholder="Enter email"
           />
         </label>
         <br />
         <label>
-          Ad Title
-          <input
-            type="text"
-            required
-            name="adtitle"
-            value={formData.adtitle}
-            onChange={handleInputChange}
-            placeholder="Ad Title"
-          />
-        </label>
-        <br />
-        <label>
-          Description
+          Description of the product
           <textarea
-            name="desc"
+            name="description"
             required
-            value={formData.desc}
+            value={formData.description}
             onChange={handleInputChange}
-            placeholder="Description"
+            placeholder="Enter Description"
+          />
+        </label>
+        
+        <br />
+        <label>
+          Upload Image
+          <input 
+          type="text" 
+          required
+          name="image"
+          value={formData.image}
+          onChange={handleInputChange} 
+          placeholder="Enter Image Url"
+          />
+        </label>
+        <br />
+        
+        <label>
+          Your Location
+          <input
+            type="text"
+            required
+            name="location"
+            value={formData.location}
+            onChange={handleInputChange}
+            placeholder="Enter location"
+          />
+        </label>
+        <br />
+        <label>
+          Name of your product
+          <input
+            type="text"
+            required
+            name="name"
+            value={formData.name}
+            onChange={handleInputChange}
+            placeholder="Enter product Name"
           />
         </label>
         <br />
         <label>
           Price(in inr)
           <input
-            type="text"
+            type="number"
             required
             name="price"
             value={formData.price}
@@ -81,62 +103,17 @@ const StepTwo = ({ prevStep, setFormData, formData, onChange, onSubmit }) => {
         </label>
         <br />
         <label>
-          Full Name
+          Your Name
           <input
             type="text"
             required
-            name="name"
-            value={formData.name}
+            name="sellerName"
+            value={formData.sellerName}
             onChange={handleInputChange}
-            placeholder="Your Name"
+            placeholder="Enter Your name"
           />
         </label>
-        <br />
-        <label>
-          Mobile Number
-          <input
-            type="number"
-            required
-            maxLength={10}
-            name="mobileno"
-            value={formData.mobileno}
-            onChange={handleInputChange}
-            placeholder="Mobile Number"
-          />
-        </label>
-        <br />
-        <label>
-          Email Address
-          <input
-            type="email"
-            required
-            name="email"
-            value={formData.email}
-            onChange={handleInputChange}
-            placeholder="Email-Id"
-          />
-        </label>
-        <br />
-        <label>
-          Upload Image
-          <input type="file" multiple onChange={handleImageUpload} />
-          {formData.images && formData.images.length > 0 && (
-            <div>
-              <h3>Preview Images:</h3>
-              <div>
-                {Array.from(formData.images).map((image, index) => (
-                  <img
-                    key={index}
-                    src={URL.createObjectURL(image)}
-                    alt={`Preview ${index}`}
-                    style={{ maxWidth: "100px", margin: "5px" }}
-                  />
-                ))}
-              </div>
-            </div>
-          )}
-        </label>
-        <br />
+        
         {/* Submit button */}
         <button>Submit</button>
         <button onClick={backHandler}>Back</button>

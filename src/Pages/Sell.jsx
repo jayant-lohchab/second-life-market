@@ -2,20 +2,20 @@ import React, { useState } from "react";
 import classes from "../components/main.module.css";
 import StepOne from "../components/forms/stepOne";
 import StepTwo from "../components/forms/stepTwo";
+import { useNavigate } from "react-router-dom";
 
 const SellPage = () => {
+  const navigate = useNavigate();
   const [step, setstep] = useState(1);
   const [formData, setFormData] = useState({
     category: "",
-    brand: "",
-    adtitle: "",
-    desc: "",
-    price: "",
-    images: [],
-    location: "",
-    name: "",
-    mobileno: "",
-    email: "",
+    contactEmail:"",
+    description:"",
+    image:"",
+    location:"",
+    name:"",
+    price:0,
+    sellerName:"",
   });
   const nextStep = () => {
     setstep(step + 1);
@@ -33,8 +33,25 @@ const SellPage = () => {
     setFormData({ ...formData, ...updatedData });
   };
 
-  const handleSubmit = () => {
-    console.log(formData);
+  const handleSubmit = async () => {
+    const response = await fetch('https://second-market-ae292-default-rtdb.firebaseio.com/public/item_store.json',{
+      method:'POST',
+      body:JSON.stringify(formData)
+    })
+    if(!response.ok){
+      throw new Error('sending new item failed');
+    }
+    setFormData({
+      category: "",
+      contactEmail:"",
+      description:"",
+      image:"",
+      location:"",
+      name:"",
+      price:0,
+      sellerName:"",
+    });
+    navigate("/listings");
   };
   switch (step) {
     case 1:

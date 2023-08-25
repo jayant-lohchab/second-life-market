@@ -83,7 +83,7 @@ const MainNavigation = () => {
               Cart
             </NavLink>
           </li>
-          {/* <li>
+          <li>
             <NavLink
               to="sell"
               className={({ isActive }) =>
@@ -93,7 +93,7 @@ const MainNavigation = () => {
             >
               Sell Item
             </NavLink>
-          </li> */}
+          </li>
           {/* <li>
             <NavLink
               to="watchList"
