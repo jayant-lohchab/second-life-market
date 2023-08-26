@@ -1,4 +1,5 @@
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import React from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomePage from "./Pages/Home";
 import ListingsDetailsPage, {
   loader as listingDetailLoader,
@@ -15,8 +16,8 @@ import SellPage from "./Pages/Sell";
 import RootPage from "./Pages/RootPage";
 import LoginAndRegister from "./components/LoginAndRegister";
 import ErrorPage from "./Pages/Error";
-import CartPage from "./Pages/Cart.js";
-import { PrivateRoute } from "./components/PrivateRoute";
+import CartPage from "./Pages/Cart";
+import { PrivateRouteWrapper } from "./components/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -38,25 +39,23 @@ const router = createBrowserRouter([
       {
         path: "sell",
         element: (
-          <PrivateRoute>
+          <PrivateRouteWrapper>
             <SellPage />
-          </PrivateRoute>
+          </PrivateRouteWrapper>
         ),
       },
       { path: ":userId", element: <UserProfilePage /> },
       { path: "watchList", element: <WatchListPage /> },
       { path: "search", element: <SearchPage /> },
       { path: "categories", element: <CategoriesPage /> },
-
       {
         path: "cart",
         element: (
-          <PrivateRoute>
+          <PrivateRouteWrapper>
             <CartPage />
-          </PrivateRoute>
+          </PrivateRouteWrapper>
         ),
       },
-
       { path: "login", element: <LoginAndRegister /> },
       { path: "settings", element: <SettingsPage /> },
       { path: "about", element: <AboutPage /> },

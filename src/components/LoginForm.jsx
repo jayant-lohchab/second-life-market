@@ -43,7 +43,9 @@ const LoginForm = () => {
               <button onClick={isUserhandler} className={classes.signupBtn}>
                 Sign Up
               </button>
-              <button className={classes.loginBtn} type="buttonz" >Login</button>
+              <button className={classes.loginBtn} type="button">
+                Login
+              </button>
             </div>
 
             <div className={classes.inputBox}>
