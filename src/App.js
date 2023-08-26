@@ -16,7 +16,7 @@ import RootPage from "./Pages/RootPage";
 import LoginAndRegister from "./components/LoginAndRegister";
 import ErrorPage from "./Pages/Error";
 import CartPage from "./Pages/Cart.js";
-
+import { PrivateRoute } from "./components/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -35,13 +35,27 @@ const router = createBrowserRouter([
         element: <ListingsDetailsPage />,
         loader: listingDetailLoader,
       },
-      { path: "sell", element: <SellPage /> },
+      {
+        path: "sell",
+        element: (
+          <PrivateRoute>
+            <SellPage />
+          </PrivateRoute>
+        ),
+      },
       { path: ":userId", element: <UserProfilePage /> },
       { path: "watchList", element: <WatchListPage /> },
       { path: "search", element: <SearchPage /> },
       { path: "categories", element: <CategoriesPage /> },
 
-      { path: "cart", element: <CartPage /> },
+      {
+        path: "cart",
+        element: (
+          <PrivateRoute>
+            <CartPage />
+          </PrivateRoute>
+        ),
+      },
 
       { path: "login", element: <LoginAndRegister /> },
       { path: "settings", element: <SettingsPage /> },
