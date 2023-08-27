@@ -107,8 +107,8 @@
     left: 0px;
     width: 350px;
     height: 100%;
-    background-color: #adadad;
-    transition: left 0.3s ease-in-out;
+    background-color: #272c31;
+    transition: left 0.2s ease-in-out;
     z-index: 11;
   }
   .mainLogo{
@@ -124,20 +124,20 @@
     right: 18px;
     background: none;
     border: none;
-    color: black;
+    color: rgb(141, 141, 141);
     font-size: 29px;
     cursor: pointer;
     z-index: 1;
     background:transparent;
-    transition: transform 1s; 
+    transition: 0.3s; 
 }
 .toggleButton:hover{
-  background:transparent;
-  border:0.5px solid grey;
-  color:rgb(104, 103, 103);
-  transform: rotate(180);
-  background:rgb(37, 36, 36);
-
+  font-size: 39px;
+  top: 15px;
+    right: 15px;
+    color:white;
+  
+  
 }
   
 .sidebar ul {
@@ -146,21 +146,37 @@
   margin-top: 80px;
 }
 
-.sidebar ul li {
+.sidebar ul li  {
   padding: 10px;
-  color: white;
-  border-bottom: 1px solid #555;
-  transition: 0.2s;
+  color: rgb(136, 136, 136);
+  
+  transition: 0.1s;
   padding-left:25px;
+  margin:5px 30px;
+  border:1px solid transparent;
+  text-decoration: none !important;
+
+  
+}
+.sidebar ul li a{
+  
+  color: rgb(136, 136, 136);
+  text-decoration: none !important;
+  
+  
 }
 
 .sidebar ul li:hover {
   background-color: #444;
+  border:1px solid rgb(136, 136, 136);
+  color:white;
+  border-radius:10px;
+
 }
 
 .sidebarWrapper{
-  width:calc(100vw - 350px);
-  margin-left: 334px;
+  width: 100vw ;
+  
   height: 100vh;
   position: absolute;
   background-color: #0000008f;
@@ -205,6 +221,12 @@
 /* Font Awesome icon style */
 .fa {
   font-size: 18px;
+}
+
+@media only screen and (max-width: 540px) {
+  .sidebar{
+    width:100%;
+  }
 }
 
   

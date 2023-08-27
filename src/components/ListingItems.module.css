@@ -6,6 +6,9 @@
   text-align: center;
 }
 
+.fullPage h1 {
+  margin:20px;
+}
 /* Styles for the items list */
 .itemsList {
   list-style: none;

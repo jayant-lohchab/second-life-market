@@ -18,16 +18,51 @@ const MainNavigation = () => {
         <ul>
 
           <button onClick={sidebarToggle} className={classes.toggleButton}> <i className="fas fa-times"></i></button>
-          <li>One</li>
-          <li>Two</li>
-          <li>Three</li>
-          <li>Four</li>
-          <li>Five</li>
-          <li>Six</li>
-          <li>Seven</li>
-          <li>Eight</li>
-          <li>Nine</li>
-          <li>Ten</li>
+            <NavLink
+              to="listings"
+             >
+              <li onClick={sidebarToggle}>
+                Buy ?
+              </li>
+            </NavLink>
+
+
+            
+            <NavLink
+              to="sell"
+              className={({ isActive }) =>
+                isActive ? classes.active : undefined
+              }
+              end
+            >
+              <li style={{marginBottom:'40px'}} onClick={sidebarToggle}>
+              Sell ?
+              </li>
+            </NavLink>
+          
+            <NavLink
+              to="cart"
+              className={({ isActive }) =>
+                isActive ? classes.active : undefined
+              }
+              end
+            >
+            <li onClick={sidebarToggle}>Your Orders</li>
+            </NavLink>
+
+          <li onClick={sidebarToggle}>About Us</li>
+          <li onClick={sidebarToggle}>Contact Us</li>
+          <li onClick={sidebarToggle}>Any Queries ?</li>
+          <NavLink
+              to="login"
+              className={({ isActive }) =>
+                isActive ? classes.active : undefined
+              }
+              end
+            >
+          <li onClick={sidebarToggle}>Login / Signup </li>
+          </NavLink>
+          
         </ul>
       </div>
       </div>
