@@ -178,7 +178,7 @@
   width: 100vw ;
   
   height: 100vh;
-  position: absolute;
+  position: fixed;
   background-color: #0000008f;
   
   margin-top:-16px;

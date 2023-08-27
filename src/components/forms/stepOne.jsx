@@ -1,4 +1,7 @@
-import classes from "../main.module.css";
+import React from 'react';
+import classes from '../main.module.css';
+import SellPage from '../../Pages/Sell';
+
 
 const StepOne = ({ selectedCategory, onSelectCategory }) => {
   const categories = [
@@ -14,28 +17,51 @@ const StepOne = ({ selectedCategory, onSelectCategory }) => {
 
   return (
     <>
-      <div className={classes.sellPageWrapper} style={{backgroundColor:"white"}}>
-        <div>
-          <div>POST YOUR AD</div>
-        </div>
-        <div>
-          <ul>
-            {categories.map((category, index) => (
-              <label>
+    <div style={{height:'100vh'}}>
+    <div className={classes.sellHeader}>
+        POST YOUR AD
+      </div>
+    <div className={classes.sellPageWrapper} style={{ backgroundColor: 'white' }}>
+      
+
+        <ul className={classes.categoryList}>
+         <h5>Choose Category</h5>
+
+          {categories.map((category, index) => (
+            <label key={index} className={classes.categoryLabel}>
               <li
-                key={index}
-                className={selectedCategory === category ? "selected" : ""}
+                className={`${classes.categoryItem} ${selectedCategory === category ? classes.selected : ''}`}
                 onClick={() => onSelectCategory(category)}
               >
                 {category}
+                <div className={classes.sellArrow}> > </div>
               </li>
-              </label>
-            ))}
-          </ul>
-        </div>
+            </label>
+          ))}
+        </ul>
       </div>
+    
+    </div>
     </>
   );
 };
 
 export default StepOne;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

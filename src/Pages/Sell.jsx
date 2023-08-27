@@ -23,7 +23,7 @@ const SellPage = () => {
   const prevStep = () => {
     setstep(step - 1);
   };
-
+ 
   const handleCategorySelect = (selectedCategory) => {
     setFormData({ ...formData, category: selectedCategory });
     nextStep();
@@ -65,7 +65,7 @@ const SellPage = () => {
       );
     case 2:
       return (
-        <div className={classes.sellPageWrapper}>
+        
           <StepTwo
             prevStep={prevStep}
             setFormData={setFormData}
@@ -73,7 +73,7 @@ const SellPage = () => {
             onChange={handleStepTwoChange}
             onSubmit={handleSubmit}
           />
-        </div>
+        
       );
     default:
       return <div></div>;
