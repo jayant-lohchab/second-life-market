@@ -4,6 +4,7 @@ import StepOne from "../components/forms/stepOne";
 import StepTwo from "../components/forms/stepTwo";
 import { useNavigate } from "react-router-dom";
 
+
 const SellPage = () => {
   const navigate = useNavigate();
   const [step, setstep] = useState(1);
@@ -27,6 +28,8 @@ const SellPage = () => {
   const handleCategorySelect = (selectedCategory) => {
     setFormData({ ...formData, category: selectedCategory });
     nextStep();
+    
+    
   };
 
   const handleStepTwoChange = (updatedData) => {
@@ -72,6 +75,7 @@ const SellPage = () => {
             formData={formData}
             onChange={handleStepTwoChange}
             onSubmit={handleSubmit}
+            selectedcategory={formData.category}
           />
         
       );

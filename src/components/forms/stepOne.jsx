@@ -1,23 +1,21 @@
 import React from 'react';
 import classes from '../main.module.css';
 import SellPage from '../../Pages/Sell';
+import { useSelector } from 'react-redux';
+
+
 
 
 const StepOne = ({ selectedCategory, onSelectCategory }) => {
-  const categories = [
-    "Vehicle",
-    "Property",
-    "Mobile",
-    "Electronics",
-    "Furniture",
-    "Fashion",
-    "Books",
-    "Sports",
-  ];
+  const { categories } = useSelector((state) => state.sellStatus);
 
+  
+
+  
+   
   return (
     <>
-    <div style={{height:'100vh'}}>
+    <div style={{minHeight:'100vh'}}>
     <div className={classes.sellHeader}>
         POST YOUR AD
       </div>

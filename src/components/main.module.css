@@ -8,7 +8,7 @@
   border: 1px solid #ccc;
   border-radius: 8px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  width: 300px;
+  width: 400px;
   margin: 0 auto;
 }
 
@@ -117,6 +117,12 @@
   resize: vertical;
 }
 
+.sellImageUpload{
+  background:transparent;
+  display:block ;
+  padding-left: 0px !important;
+}
+
 .buttonsWrapper {
   display: flex;
   flex-direction: column;
@@ -159,4 +165,57 @@
 
 }
 
+
+
+.fileInputContainer {
+  margin-top: 10px;
+}
+
+.addFileButton {
+  background-color: #ff9900;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.addFileButton:hover {
+  background-color: #993300;
+}
+
+.propertyTypeWrapper {
+  
+  display:inline-block;
+  margin:10px;
+ 
+}
+
+
+.propertyTypeSelect {
+  appearance: none; 
+  -webkit-appearance: none; 
+  -moz-appearance: none;
+ 
+  background-size: 16px; 
+  border: none;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  position: absolute;
+  right: 40px;
+  top: 0;
+  width: 140px;
+}
+
+.selectformLabel{
+  flex:1;
+  font-size: 13px;
+  margin-bottom: 30px;
+  color:rgb(225, 219, 219);
+  position: relative;
+
+}
 

@@ -25,7 +25,7 @@ function CartPage() {
       }
 
     {cartItems.length < 1 && 
-     <div style={{ height:'100vh' , display:'flex' , flexDirection:'column' ,alignItems:'center' }}>
+     <div style={{ minHeight:'100vh' , display:'flex' , flexDirection:'column' ,alignItems:'center' }}>
       <p style={{textAlign: 'center', marginTop:'100px' , marginBottom:'30px' , color:'grey' }}>Your Cart is Empty </p>
       <button
       style={{

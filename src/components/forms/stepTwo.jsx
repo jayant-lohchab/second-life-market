@@ -1,8 +1,9 @@
-
-import React from "react";
+import React , {useState} from "react";
 import classes from "../main.module.css"; 
 
-const StepTwo = ({ prevStep, setFormData, formData, onChange, onSubmit }) => {
+const StepTwo = ({ prevStep, setFormData, formData, onChange, onSubmit , selectedcategory }) => {
+
+  console.log(selectedcategory )
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     const newValue = name === "price" ? parseInt(value, 10) : value;
@@ -28,12 +29,199 @@ const StepTwo = ({ prevStep, setFormData, formData, onChange, onSubmit }) => {
     prevStep();
   }
 
+  const [fileInputs , setFileInputs] = useState([
+    <input
+    key={0}
+    className={`${classes.stepTwoFormInput} ${classes.sellImageUpload}`}
+    type="file"
+    accept="image/*"
+    required
+    onChange={handleInputChange} />
+  ])
+
+  const handleAddFileInput = () => {
+    const newFileInputs = [...fileInputs];
+    newFileInputs.push(<input
+      key={newFileInputs.length}
+      className={`${classes.stepTwoFormInput} ${classes.sellImageUpload}`}
+      type="file"
+      accept="image/*"
+      required
+      onChange={handleInputChange}
+    />);
+    setFileInputs(newFileInputs);
+    
+    
+  };
+
   return (
-    <div style={{height:'100vh'}}>
+    <div style={{minHeight:'100vh'}}>
       <div className={classes.stepTwoWrapper}>
       <form className={classes.steptwoform} onSubmit={handleSubmit}>
 
-
+        {selectedcategory=='Vehicle' &&
+        <>
+        <div className={classes.sellFormWrapper}>
+        <label className={classes.stepTwoformLabel}>
+          Brand
+          <input
+            className={classes.stepTwoformInput}
+            type="text"
+            required
+            
+          />
+        </label>
+       
+        
+        <label  className={classes.stepTwoformLabel}>
+          Model Year
+          <input
+           className={classes.stepTwoformInput}
+            type="text"
+            required
+            
+          />
+        </label>
+        </div>
+        <div className={classes.sellFormWrapper}>
+        <label className={classes.stepTwoformLabel}>
+          Km's driven
+          <input
+            style={{width:'46.5%' , display:'block'}}
+            className={classes.stepTwoformInput}
+            type="text"
+            required
+            
+          />
+        </label>
+       
+        
+        
+        </div>
+        </>
+        }
+        {selectedcategory=='Property' &&
+        <>
+        <div className={classes.sellFormWrapper}>
+        <label className={classes.selectformLabel}>
+          Type of Property
+          <div className={classes.propertyTypeWrapper}>
+            
+            <select className={classes.propertyTypeSelect}>
+              <option value="option1">Apartments</option>
+              <option value="option2">Builder Floors</option>
+              <option value="option3">Farm Houses</option>
+              <option value="option4">Plots</option>
+              <option value="option5">Houses</option>
+              <option value="option6">Commercial</option>
+            </select>
+          </div>
+        </label>
+       
+        <label className={classes.selectformLabel}>
+          Listed By
+          <div className={classes.propertyTypeWrapper}>
+            
+            <select className={classes.propertyTypeSelect}>
+              <option value="option1">Builder</option>
+              <option value="option2">Dealer</option>
+              <option value="option3">Owner</option>
+              
+            </select>
+          </div>
+        </label>
+        
+        
+        </div>
+        <div className={classes.sellFormWrapper}>
+        <label className={classes.selectformLabel}>
+          Bedrooms
+          <div className={classes.propertyTypeWrapper}>
+            
+            <select className={classes.propertyTypeSelect}>
+              <option value="option1">1</option>
+              <option value="option2">2</option>
+              <option value="option3">3</option>
+              <option value="option4">4</option>
+              <option value="option5">5</option>
+              <option value="option6">6</option>
+            </select>
+          </div>
+        </label>
+       
+        <label className={classes.selectformLabel}>
+          Bathrooms
+          <div className={classes.propertyTypeWrapper}>
+            
+            <select className={classes.propertyTypeSelect}>
+              <option value="option1">1</option>
+              <option value="option2">2</option>
+              <option value="option3">3</option>
+              <option value="option4">4</option>
+              <option value="option5">5</option>
+              <option value="option6">6</option>
+            </select>
+          </div>
+        </label>
+        
+        
+        </div>
+        <div className={classes.sellFormWrapper}>
+        <label className={classes.stepTwoformLabel}>
+          Facing
+          <input
+            className={classes.stepTwoformInput}
+            type="text"
+            required
+            
+          />
+        </label>
+       
+        
+        <label  className={classes.stepTwoformLabel}>
+          Total Floors
+          <input
+           className={classes.stepTwoformInput}
+            type="text"
+            required
+            
+          />
+        </label>
+        </div>
+        <div className={classes.sellFormWrapper}>
+        <label className={classes.stepTwoformLabel}>
+        Super Builtup area (ft²) *
+          <input
+            className={classes.stepTwoformInput}
+            type="text"
+            required
+            
+          />
+        </label>
+        <label className={classes.stepTwoformLabel}>
+        Carpet Area (ft²) *
+          <input
+            
+            className={classes.stepTwoformInput}
+            type="text"
+            required
+            
+          />
+        </label>
+       
+        
+        
+        </div>
+        </>
+        }
+        {selectedcategory=='Mobile' &&<div>mobile data</div>}
+        {selectedcategory=='Electronics' &&<div>electronic data</div>}
+        {selectedcategory=='Furniture' &&<div>Furniture data</div>}
+        {selectedcategory=='Fashion' &&<div>Fashion data</div>}
+        {selectedcategory=='Books' &&<div>Books data</div>}
+        {selectedcategory=='Sports' &&<div>Sports data</div>}
+        
+        <hr style={{border:'1px solid grey' , marginBottom:'25px'}}/>
         <div className={classes.sellFormWrapper}>
         <label className={classes.stepTwoformLabel}>
           Your Contact Email
@@ -121,17 +309,20 @@ const StepTwo = ({ prevStep, setFormData, formData, onChange, onSubmit }) => {
         </div>
 
 
-        <label  className={classes.stepTwoformLabel}>
+        <label className={classes.stepTwoFormLabel}>
           Upload Image
-          <input 
-          className={classes.stepTwoformInput}
-          type="file"
-          accept="image/*"
-          required
-          name="image"
-          value={formData.image}
-          onChange={handleInputChange} 
-          />
+          {fileInputs.map((input, index) => (
+            <div key={index} className={classes.fileInputContainer}>
+              {input}
+            </div>
+          ))}
+         <button
+            type="button"
+            className={classes.addFileButton}
+            onClick={handleAddFileInput}
+          >
+            Add Another File
+          </button>
         </label>
         
        
