@@ -1,9 +1,14 @@
 import { NavLink } from "react-router-dom";
 import classes from "./MainNavigation.module.css"; // Import the module stylesheet using 'classes'
 import { useState } from "react";
+import { UseSelector, useSelector } from "react-redux/es/hooks/useSelector";
+
+
 
 const MainNavigation = () => {
+  const userName = useSelector(state => state.accountStatus.register.firstName)
 
+  console.log(userName + 'll')
   const [sidebar , setSidebar] = useState(false)
   const sidebarToggle =() =>{
        setSidebar(!sidebar)
@@ -13,8 +18,10 @@ const MainNavigation = () => {
 
       {sidebar && 
       <>
+      
       <div className={classes.sidebarWrapper}>
       <div className={classes.sidebar}>
+      <button className={classes.helloUserBtn}>Hello </button>
         <ul>
 
           <button onClick={sidebarToggle} className={classes.toggleButton}> <i className="fas fa-times"></i></button>
@@ -64,6 +71,8 @@ const MainNavigation = () => {
           </NavLink>
           
         </ul>
+
+      
       </div>
       </div>
       </>}
