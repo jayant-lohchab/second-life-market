@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from '../main.module.css';
-import SellPage from '../../Pages/Sell';
+// import SellPage from '../../Pages/Sell';
 import { useSelector } from 'react-redux';
 
 
@@ -32,7 +32,7 @@ const StepOne = ({ selectedCategory, onSelectCategory }) => {
                 onClick={() => onSelectCategory(category)}
               >
                 {category}
-                <div className={classes.sellArrow}> > </div>
+                <div className={classes.sellArrow}>  </div>
               </li>
             </label>
           ))}

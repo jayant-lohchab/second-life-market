@@ -4,7 +4,7 @@ import { isUserChange, login } from "../store/AccountSlice";
 import { Link } from "react-router-dom";
 import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
 import classes from "./LoginAndRegister.module.css";
-/* import loginImg from "../assets/loginImage.jpg"; */
+import loginImg from "../assets/loginImage.jpg"; 
 const LoginForm = () => {
   const dispatch = useDispatch();
   const [showPassword, setShowPassword] = useState(false);
@@ -36,7 +36,7 @@ const LoginForm = () => {
       <div className={classes.loginregisterWrapper}>
         <div className={classes.loginregisterMain}>
           <div className={classes.loginregisterImage}>
-            <img alt="" />
+            <img alt="" src={loginImg} />
           </div>
           <form className={classes.loginPage} onSubmit={submitHandler}>
             <div className={classes.loginToggleBtns}>
