@@ -72,7 +72,7 @@ const handleSubmit = (e) => {
         placeholder="Your name"
         type="text"
       />
-      <span>{fname}</span>
+      
     </div>
     <div>
       <h4>Last Name</h4>
@@ -83,7 +83,7 @@ const handleSubmit = (e) => {
         placeholder="Your last name"
         type="text"
       />
-      <span>{lname}</span>
+      
     </div>
 
     <div>
@@ -95,7 +95,7 @@ const handleSubmit = (e) => {
         placeholder="example@email.com"
         type="text"
       />
-      <span>{email}</span>
+      
     </div>
 
     <div>
@@ -108,7 +108,7 @@ const handleSubmit = (e) => {
         placeholder="Enter message"
         type="text"
       />
-      <span>{message}</span>
+      
     </div>
 
     <div className={classes.formbtn}>
