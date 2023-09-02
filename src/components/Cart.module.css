@@ -1,109 +1,175 @@
-/* Cart.module.css */
 .cartContainer {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .title {
-    color: blue;
-  }
-  
-  .cartItems {
-    margin-top: 20px;
-  }
-  
-  .cartItem {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid grey;
-  }
-  
-  .itemImage img {
-    width: 80px; /* Adjust image size as needed */
-    height: auto;
-    margin-right: 20px;
-  }
-  
-  .itemDetails {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-  }
-  
-  .itemName {
-    color: black;
-    font-weight: bold;
-  }
-  
-  .itemPrice {
-    color: grey;
-  }
-  
-  .itemLocation {
-    color: #777;
-    font-size: 14px;
-  }
-  
-  .itemSellerName {
-    color: #777;
-    font-size: 14px;
-  }
-  
-  .removeButton {
-    background-color: rgb(174, 82, 82);
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .removeButton:hover {
-    background-color: rgb(108, 66, 66);
-  }
-  
-  .cartSummary {
-    margin-top: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .total {
-    font-weight: bold;
-  }
-  
-  .continueButton {
-    background-color: rgb(93, 93, 187);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  .confirmButton{
-    background-color: rgb(164, 31, 187);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .continueButton:hover {
-    background-color: rgb(27, 8, 111);
-  }
-  .confirmButton:hover {
-    background-color: rgb(71, 14, 100);
-  }
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease;
+}
 
+.title {
+  color: rgb(47, 83, 99);
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.cartItems {
+  margin-top: 20px;
+  border:2px solid rgb(180, 180, 180);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+
+ 
+}
+
+.cartItem {
+  display: flex;
+  align-items: center;
+ 
+  padding: 30px;
+  border-bottom: 1px solid #e0e0e0;
+  animation: slideIn 0.5s ease;
+  transition: 0.3s ease-in-out;
+}
+.cartItem:hover {
+  background-color: #d9e4eaa1;
+  border-left: 20px solid #71acc2;
+}
+
+.itemImage img {
+  width: 80px;
+  height: auto;
+  margin-right: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+.itemDetails {
+  flex-grow: 1;
+}
+
+.itemName {
+  color: black;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.itemPrice {
+  color: grey;
+  font-size: 18px;
+}
+
+.itemLocation,
+.itemSellerName {
+  color: #777;
+  font-size: 14px;
+}
+
+.removeButton {
+  background-color: rgb(176, 62, 62);
+  color: white;
+  border: none;
+  padding: 12px 17px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  animation: bounceIn 0.5s ease;
+}
+
+.removeButton:hover {
+  background-color: rgb(108, 66, 66);
+  transform: scale(1.05);
+}
+
+.cartSummary {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  animation: slideInFromBottom 0.5s ease;
+}
+
+.total {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.continueButton {
+  background-color: rgb(93, 93, 187);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  animation: slideInFromBottom 0.5s ease;
+}
+
+.continueButton:hover {
+  background-color: darkblue;
+  transform: translateY(-3px);
+}
+
+
+
+.confirmButton {
+  display: inline-block;
+  padding: 14px 20px;
+  background-image: linear-gradient(to bottom, #6598c0, #355f82);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.confirmButton:hover {
+  background-image: linear-gradient(to bottom, #477aa1, #27475b);
+  transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromBottom {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes bounceIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
   /*----------------------address_styling-----------------*/
 
   /* YourForm.module.css */

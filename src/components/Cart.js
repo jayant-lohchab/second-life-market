@@ -80,7 +80,7 @@ const Cart = ({ cartItems, total }) => {
       <div className={classes.cartSummary}>
         <p className={classes.total}>Total: ${total.toFixed(2)}</p>
         <button className={classes.continueButton} onClick={continueOrder}>
-          Continue to Order
+          Continue Shopping
         </button>
         <button className={classes.confirmButton} onClick={changeShowCartHandler}>Confirm Order</button>
       </div>

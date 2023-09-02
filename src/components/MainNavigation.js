@@ -6,9 +6,7 @@ import { UseSelector, useSelector } from "react-redux/es/hooks/useSelector";
 
 
 const MainNavigation = () => {
-  const userName = useSelector(state => state.accountStatus.register.firstName)
-
-  console.log(userName + 'll')
+  
   const [sidebar , setSidebar] = useState(false)
   const sidebarToggle =() =>{
        setSidebar(!sidebar)
@@ -21,7 +19,7 @@ const MainNavigation = () => {
       
       <div className={classes.sidebarWrapper}>
       <div className={classes.sidebar}>
-      <button className={classes.helloUserBtn}>Hello </button>
+      <button className={classes.helloUserBtn}>Hello (username)</button>
         <ul>
 
           <button onClick={sidebarToggle} className={classes.toggleButton}> <i className="fas fa-times"></i></button>

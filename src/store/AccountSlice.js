@@ -20,10 +20,7 @@ const AccountSlice = createSlice({
     isUserChange(state) {
       state.isUser = !state.isUser;
     },
-    const selectFirstName = (state) => {
-      const currentUser = state.accountStatus.accounts[0];
-      return currentUser ? currentUser.firstName : "";
-    };
+    
   },
 });
 
