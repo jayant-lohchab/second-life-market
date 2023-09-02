@@ -5,7 +5,7 @@ import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import classes from "./LoginAndRegister.module.css";
-/* import loginImg from '../assets/loginImage.jpg' */
+import loginImg from '../assets/loginImage.jpg' 
 
 const SignupForm = (setIsLoggedIn) => {
   const navigate = useNavigate();
@@ -66,7 +66,7 @@ const SignupForm = (setIsLoggedIn) => {
       <div className={classes.loginregisterWrapper}>
         <div className={classes.loginregisterMain}>
           <div className={classes.loginregisterImage}>
-            <img alt="" />
+            <img alt="" src={loginImg} />
           </div>
           <form className={classes.registerPage} onSubmit={submitHandler}>
             <div className={classes.loginToggleBtns}>

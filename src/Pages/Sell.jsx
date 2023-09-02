@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import classes from "../components/main.module.css";
+// import classes from "../components/main.module.css";
 import StepOne from "../components/forms/stepOne";
 import StepTwo from "../components/forms/stepTwo";
 import { useNavigate } from "react-router-dom";
