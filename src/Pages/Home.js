@@ -1,9 +1,10 @@
 import React from 'react'
+import HomeMaster from '../components/HomeMaster';
+
 
 const HomePage = () => {
   return (
-    <div>HomePage</div>
+    <HomeMaster />
   )
 }
-
 export default HomePage;
