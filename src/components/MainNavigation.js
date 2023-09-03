@@ -1,9 +1,13 @@
 import { NavLink } from "react-router-dom";
 import classes from "./MainNavigation.module.css"; // Import the module stylesheet using 'classes'
 import { useState } from "react";
+import logoImg from "../assets/second-life-icon.jpg"
+// import { UseSelector, useSelector } from "react-redux/es/hooks/useSelector";
+
+
 
 const MainNavigation = () => {
-
+  
   const [sidebar , setSidebar] = useState(false)
   const sidebarToggle =() =>{
        setSidebar(!sidebar)
@@ -13,22 +17,69 @@ const MainNavigation = () => {
 
       {sidebar && 
       <>
+      
       <div className={classes.sidebarWrapper}>
       <div className={classes.sidebar}>
+      <button className={classes.helloUserBtn}>Hello (username)</button>
         <ul>
 
           <button onClick={sidebarToggle} className={classes.toggleButton}> <i className="fas fa-times"></i></button>
-          <li>One</li>
-          <li>Two</li>
-          <li>Three</li>
-          <li>Four</li>
-          <li>Five</li>
-          <li>Six</li>
-          <li>Seven</li>
-          <li>Eight</li>
-          <li>Nine</li>
-          <li>Ten</li>
+            <NavLink
+              to="listings"
+             >
+              <li onClick={sidebarToggle}>
+                Buy ?
+              </li>
+            </NavLink>
+
+
+            
+            <NavLink
+              to="sell"
+              className={({ isActive }) =>
+                isActive ? classes.active : undefined
+              }
+              end
+            >
+              <li style={{marginBottom:'40px'}} onClick={sidebarToggle}>
+              Sell ?
+              </li>
+            </NavLink>
+          
+            <NavLink
+              to="cart"
+              className={({ isActive }) =>
+                isActive ? classes.active : undefined
+              }
+              end
+            >
+            <li onClick={sidebarToggle}>Your Orders</li>
+            </NavLink>
+
+            <NavLink
+              to="about"
+              className={({ isActive }) =>
+                isActive ? classes.active : undefined
+              }
+              end
+            >
+            <li onClick={sidebarToggle}>About Us</li>
+            </NavLink>
+          <li onClick={sidebarToggle}>Contact Us</li>
+          <li onClick={sidebarToggle}>Any Queries ?</li>
+          <NavLink
+              to="login"
+              className={({ isActive }) =>
+                isActive ? classes.active : undefined
+              }
+              end
+            >
+          <li onClick={sidebarToggle}>Login / Signup </li>
+          </NavLink>
+          
         </ul>
+
+      
       </div>
       </div>
       </>}
@@ -39,7 +90,9 @@ const MainNavigation = () => {
           
 
           <div className={classes.sidebarLogo} onClick={sidebarToggle}><i className="fas fa-bars"></i></div>
-          <div className={classes.mainLogo}>Website Logo *</div>
+          <div className={classes.mainLogo}>
+            <img src={logoImg} alt="WebsiteLogo" />
+          </div>
           </div>
             
            <ul>
@@ -54,14 +107,14 @@ const MainNavigation = () => {
               Home
             </NavLink>
           </li>
-          <div class={classes.sesarchContainer}>
+          {/* <div class={classes.sesarchContainer}>
                <input type="text" className={classes.searchInput} placeholder="Search..." />
                
                <button class={classes.searchButton}>
                  Search
                </button>
-             </div>
-          <li>
+            </div> */}
+          <li> 
             <NavLink
               to="listings"
               className={({ isActive }) =>
@@ -72,7 +125,18 @@ const MainNavigation = () => {
               Listings
             </NavLink>
           </li>
-          {/* <li>
+          <li> 
+            <NavLink
+              to="cart"
+              className={({ isActive }) =>
+                isActive ? classes.active : undefined
+              }
+              end
+            >
+              Cart
+            </NavLink>
+          </li>
+          <li>
             <NavLink
               to="sell"
               className={({ isActive }) =>
@@ -82,7 +146,7 @@ const MainNavigation = () => {
             >
               Sell Item
             </NavLink>
-          </li> */}
+          </li>
           {/* <li>
             <NavLink
               to="watchList"

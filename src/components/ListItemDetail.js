@@ -1,6 +1,11 @@
 import React from 'react'
 import classes from "./ListItemDetail.module.css"
 function ListItemDetail({data}) {
+  if(data === null){
+  return(
+      <h1>No such product exists</h1>
+    )
+  }
   return (
     <article className={classes.product}>
       <div className={classes.productImage}>

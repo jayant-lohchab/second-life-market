@@ -1,0 +1,231 @@
+.cartContainer {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease;
+}
+
+.title {
+  color: rgb(47, 83, 99);
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.cartItems {
+  margin-top: 20px;
+  border:2px solid rgb(180, 180, 180);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+
+ 
+}
+
+.cartItem {
+  display: flex;
+  align-items: center;
+ 
+  padding: 30px;
+  border-bottom: 1px solid #e0e0e0;
+  animation: slideIn 0.5s ease;
+  transition: 0.3s ease-in-out;
+}
+.cartItem:hover {
+  background-color: #d9e4eaa1;
+  border-left: 20px solid #71acc2;
+}
+
+.itemImage img {
+  width: 80px;
+  height: auto;
+  margin-right: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+.itemDetails {
+  flex-grow: 1;
+}
+
+.itemName {
+  color: black;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.itemPrice {
+  color: grey;
+  font-size: 18px;
+}
+
+.itemLocation,
+.itemSellerName {
+  color: #777;
+  font-size: 14px;
+}
+
+.removeButton {
+  background-color: rgb(176, 62, 62);
+  color: white;
+  border: none;
+  padding: 12px 17px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  animation: bounceIn 0.5s ease;
+}
+
+.removeButton:hover {
+  background-color: rgb(108, 66, 66);
+  transform: scale(1.05);
+}
+
+.cartSummary {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  animation: slideInFromBottom 0.5s ease;
+}
+
+.total {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.continueButton {
+  background-color: rgb(93, 93, 187);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  animation: slideInFromBottom 0.5s ease;
+}
+
+.continueButton:hover {
+  background-color: darkblue;
+  transform: translateY(-3px);
+}
+
+
+
+.confirmButton {
+  display: inline-block;
+  padding: 14px 20px;
+  background-image: linear-gradient(to bottom, #6598c0, #355f82);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.confirmButton:hover {
+  background-image: linear-gradient(to bottom, #477aa1, #27475b);
+  transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromBottom {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes bounceIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+  /*----------------------address_styling-----------------*/
+
+  /* YourForm.module.css */
+
+.addressContainer {
+  background-color: rgba(156, 198, 210, 0.814);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.addressForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.addressLabel {
+  margin-bottom: 4px;
+  font-weight: bold;
+  color: rgb(95, 63, 128);
+}
+
+.addressInputs {
+  padding: 8px;
+  margin-bottom: 12px;
+  border: 1px solid black;
+  border-radius: 4px;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.submitButton {
+  background-color: rgb(51, 51, 130);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.backToCartbttn{
+  background-color: rgb(151, 107, 98);
+    color: white;
+    border: none;
+    margin: 7px 2px;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.backToCartbttn{
+  background-color: rgb(209, 128, 61);
+}
+
+.submitButton:hover {
+  background-color: rgb(55, 31, 98);
+}
+
+  

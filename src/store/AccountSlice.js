@@ -20,6 +20,7 @@ const AccountSlice = createSlice({
     isUserChange(state) {
       state.isUser = !state.isUser;
     },
+    
   },
 });
 

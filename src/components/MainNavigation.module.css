@@ -2,174 +2,176 @@
 
 /* Header Styles */
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 .header {
-    /* background-color: #333; */
-    color: white;
-    /* padding: 10px; */
-
-    
-    
-  }
-  
-  /* Navigation Styles */
-  .navList {
-    list-style-type: none;
-    padding: 10px;
-    display: flex;
-    justify-content:space-between; /* Align links to the left */
-    /* position: fixed; */
-    background: white;
-    width: 100%;
-    top:0;
-    /* z-index: 10; */
-  }
-  .navList ul {
-    list-style:none;
-    display:flex;
-    margin-block: 0px;
-
-  }
-  .navList li {
-    margin: auto 1rem;
-  }
-  
-  /* NavLink Styles */
-  .navList a{
-    color: #212121; /* Yellow color for links */
-    text-decoration: none;
-    
-  }
-  
-  .navList a:hover,
-  .navList a:active {
-    color: #989898; /* Blue color on hover */
-    text-decoration: underline;
-  }
-
-  .headerLeft{
-    display:flex;
-  }
-
-
-
-  .searchContainer {
-    display: flex;
-    align-items: center;
-    max-width: 300px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    overflow: hidden;
-  }
-  
-  .searchInput {
-    flex: 1;
-    border-top: 1.5px solid rgba(128, 128, 128, 0.388);
-    border-bottom: 1.5px solid rgba(128, 128, 128, 0.388);
-    border-left: 1.5px solid rgba(128, 128, 128, 0.388);
-    border-right:none;
-    padding: 10px;
-    font-size: 16px;
-    outline: none;
-    border-radius: 5px 0 0 5px;
-    margin-top:2px;
-  }
-  
-  .searchButton {
-    background-color: #6396bd;
-    color: white;
-    border: none;
-    padding: 13px 15px 11px 15px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    border-radius: 0 5px 5px 0;
-  }
-  
-  .searchButton:hover {
-    background-color: #45718c;
-  }
-  
-  .sidebarLogo{
-    color:black;
-    margin:auto;
-  }
-
-  .loginSignup span{
-    color:#6396bd;
-  }
-  .sidebar {
-    position: fixed;
-    top: 0;
-    left: 0px;
-    width: 350px;
-    height: 100%;
-    background-color: #adadad;
-    transition: left 0.3s ease-in-out;
-    z-index: 11;
-  }
-  .mainLogo{
-    margin: auto 10px;
-    color:black;
-
-  }
- 
-  
-  .toggleButton {
-    position: absolute;
-    top: 18px;
-    right: 18px;
-    background: none;
-    border: none;
-    color: black;
-    font-size: 29px;
-    cursor: pointer;
-    z-index: 1;
-    background:transparent;
-    transition: transform 1s; 
+  /* background-color: #333; */
+  color: white;
+  /* padding: 10px; */
 }
-.toggleButton:hover{
-  background:transparent;
-  border:0.5px solid grey;
-  color:rgb(104, 103, 103);
-  transform: rotate(180);
-  background:rgb(37, 36, 36);
-
+.header img {
+  max-width: 15%;
 }
-  
+
+/* Navigation Styles */
+.navList {
+  list-style-type: none;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between; /* Align links to the left */
+  /* position: fixed; */
+  background: white;
+  width: 100%;
+  top: 0;
+  box-shadow: 1px -8px 12px 2px rgba(0, 0, 0, 0.5);
+  /* z-index: 10; */
+}
+.navList ul {
+  list-style: none;
+  display: flex;
+  margin-block: 0px;
+}
+.navList li {
+  margin: auto 1rem;
+}
+
+/* NavLink Styles */
+.navList a {
+  color: #212121; /* Yellow color for links */
+  text-decoration: none;
+}
+
+.navList a:hover,
+.navList a:active {
+  color: #989898; /* Blue color on hover */
+  text-decoration: underline;
+}
+
+.headerLeft {
+  display: flex;
+}
+
+.searchContainer {
+  display: flex;
+  align-items: center;
+  max-width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.searchInput {
+  flex: 1;
+  border-top: 1.5px solid rgba(128, 128, 128, 0.388);
+  border-bottom: 1.5px solid rgba(128, 128, 128, 0.388);
+  border-left: 1.5px solid rgba(128, 128, 128, 0.388);
+  border-right: none;
+  padding: 10px;
+  font-size: 16px;
+  outline: none;
+  border-radius: 5px 0 0 5px;
+  margin-top: 2px;
+}
+
+.searchButton {
+  background-color: #6396bd;
+  color: white;
+  border: none;
+  padding: 13px 15px 11px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border-radius: 0 5px 5px 0;
+}
+
+.searchButton:hover {
+  background-color: #45718c;
+}
+
+.sidebarLogo {
+  color: black;
+  margin: auto;
+}
+
+.loginSignup span {
+  color: #6396bd;
+}
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0px;
+  width: 350px;
+  height: 100%;
+  background-color: #272c31;
+  transition: left 0.2s ease-in-out;
+  z-index: 11;
+}
+.mainLogo {
+  margin: auto 10px;
+  color: black;
+  size-adjust: contain;
+}
+
+.toggleButton {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: none;
+  border: none;
+  color: rgb(141, 141, 141);
+  font-size: 29px;
+  cursor: pointer;
+  z-index: 1;
+  background: transparent;
+  transition: 0.3s;
+}
+.toggleButton:hover {
+  font-size: 39px;
+  top: 15px;
+  right: 15px;
+  color: white;
+}
+
 .sidebar ul {
   list-style-type: none;
   padding: 0;
-  margin-top: 80px;
+  margin-top: 20px;
 }
 
 .sidebar ul li {
   padding: 10px;
-  color: white;
-  border-bottom: 1px solid #555;
-  transition: 0.2s;
-  padding-left:25px;
+  color: rgb(136, 136, 136);
+
+  transition: 0.1s;
+  padding-left: 25px;
+  margin: 5px 30px;
+  border: 1px solid transparent;
+  text-decoration: none !important;
+}
+.sidebar ul li a {
+  color: rgb(136, 136, 136);
+  text-decoration: none !important;
 }
 
 .sidebar ul li:hover {
   background-color: #444;
+  border: 1px solid rgb(136, 136, 136);
+  color: white;
+  border-radius: 10px;
 }
 
-.sidebarWrapper{
-  width:calc(100vw - 350px);
-  margin-left: 334px;
-  height: 100vh;
-  position: absolute;
+.sidebarWrapper {
+  width: 100vw;
+
+  min-height: 100vh;
+  position: fixed;
   background-color: #0000008f;
-  
-  margin-top:-16px;
-  top:16px;
+
+  margin-top: -16px;
+  top: 16px;
   z-index: 11;
-  
- 
 }
 
 .search-container {
@@ -202,9 +204,34 @@
   background-color: #2980b9;
 }
 
-/* Font Awesome icon style */
 .fa {
   font-size: 18px;
 }
 
-  
+.helloUserBtn {
+  width: 300px;
+  margin: 25px;
+  margin-top: 100px;
+  padding: 15px;
+  border-radius: 17px;
+  background-color: #8ca2af;
+  border: 1px solid transparent;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.helloUserBtn:hover {
+  border: 1px solid rgb(198, 198, 198);
+  background-color: #5c6c76;
+
+  color: rgb(194, 194, 194);
+}
+
+@media only screen and (max-width: 540px) {
+  .sidebar {
+    width: 100%;
+  }
+  .navList ul {
+    display: none;
+  }
+}
