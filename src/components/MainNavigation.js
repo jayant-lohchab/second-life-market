@@ -1,7 +1,8 @@
 import { NavLink } from "react-router-dom";
 import classes from "./MainNavigation.module.css"; // Import the module stylesheet using 'classes'
 import { useState } from "react";
-import { UseSelector, useSelector } from "react-redux/es/hooks/useSelector";
+import logoImg from "../assets/second-life-icon.jpg"
+// import { UseSelector, useSelector } from "react-redux/es/hooks/useSelector";
 
 
 
@@ -55,7 +56,15 @@ const MainNavigation = () => {
             <li onClick={sidebarToggle}>Your Orders</li>
             </NavLink>
 
-          <li onClick={sidebarToggle}>About Us</li>
+            <NavLink
+              to="about"
+              className={({ isActive }) =>
+                isActive ? classes.active : undefined
+              }
+              end
+            >
+            <li onClick={sidebarToggle}>About Us</li>
+            </NavLink>
           <li onClick={sidebarToggle}>Contact Us</li>
           <li onClick={sidebarToggle}>Any Queries ?</li>
           <NavLink
@@ -81,7 +90,9 @@ const MainNavigation = () => {
           
 
           <div className={classes.sidebarLogo} onClick={sidebarToggle}><i className="fas fa-bars"></i></div>
-          <div className={classes.mainLogo}>Website Logo *</div>
+          <div className={classes.mainLogo}>
+            <img src={logoImg} alt="WebsiteLogo" />
+          </div>
           </div>
             
            <ul>
